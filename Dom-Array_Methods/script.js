@@ -8,7 +8,8 @@ const calculateWealthBtn = document.getElementById('calculate-wealth');
 // People where be stored
 let data = [];
 
-getRandomUser();
+// getRandomUser();
+
 
 
 // Fetch random user and add money 
@@ -32,4 +33,29 @@ async function getRandomUser() {
 // Add new obj to data arr
 function addData(obj) {
   data.push(obj);
+
+  updateDOM();
 }
+
+// Update DOM
+// if nothing is passed in, default parameter will be used which is data
+function updateDOM(providedData = data) {
+  // Clear main div, replace whats already there
+  main.innerHTML = '<h2><strong>Person</strong> Wealth</h2>';
+
+  providedData.forEach(item => {
+    const element = document.createElement('div');
+    element.classList.add('person');
+    element.innerHTML = `<strong>${item.name}</strong> ${formatMoney(item.money)}`;
+
+    main.appendChild(element);
+  });
+}
+
+// Format number as money
+function formatMoney(number) {
+  return '$' + number.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,');
+}
+
+// Event Listeners 
+addUserBtn.addEventListener('click', getRandomUser);
