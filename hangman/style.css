@@ -82,3 +82,70 @@ h1 {
   height: 50px;
   width: 20px;
 }
+
+/* popup overlay */
+.popup-container {
+  background-color: rgba(0, 0, 0, 0.3);
+  /* takes out flow of elements, because its gonna be a popup  */
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  /* display flex when shown */
+  /* display none when no popup */
+  /* display: flex; */
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup {
+  background: #2980b9;
+  border-radius: 5px;
+  box-shadow: 0 15px 10px 3px rgba(0, 0, 0, 0, 1);
+  padding: 20px;
+  text-align: center;
+}
+
+.popup button {
+  cursor: pointer;
+  background-color: #fff;
+  color: #2980b9;
+  border: 0;
+  margin-top: 20px;
+  padding: 12px 20px;
+  font-size: 16px;
+}
+
+/* When clicked, give scale down effect */
+.popup button:active {
+  transform: scale(0.98);
+}
+
+.popup button:focus {
+  outline: 0;
+}
+
+.notification-container {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 10px 10px 0 0;
+  padding: 15px 20px;
+  /* not in game-container anymore (that is relative, so looks at window */
+  /* goes right to the top */
+  position: absolute;
+  /* off screen */
+  bottom: -50px;
+  /* smooth transition of notification */
+  transition: transform 0.3 ease-in-out;
+}
+
+.notification-container p {
+  /* offscreen now */
+  margin: 0;
+}
+
+/* Once class show is added to notification container, move notif up to be shown */
+.notification-container.show {
+  transform: translateY(-50px);
+}
