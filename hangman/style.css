@@ -1,0 +1,18 @@
+body {
+  background-color: #34495e;
+  color: #fff;
+}
+
+.figure-container {
+  /* dont want head to have a filled color, so transparent  */
+  fill: transparent;
+  /* stroke is the line  */
+  stroke: #fff;
+  stroke-width: 4px;
+  /* end of the line, make round, small detail */
+  stroke-linecap: round;
+}
+
+.figure-part {
+  display: none;
+}
