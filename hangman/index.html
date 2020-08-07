@@ -11,6 +11,7 @@
 <body>
   <h1>Hangman</h1>
   <p>Find the hidden word - Enter a letter</p>
+
   <div class="game-container">
     <svg height="250" width="200" class="figure-container">
       <!-- ROD -->
@@ -34,7 +35,38 @@
       <line x1="140" y1="150" x2="120" y2="180" class="figure-part" />
     </svg>
 
+    <div class="wrong-letters-container">
+      <div class="wrong-letter">
+        <!-- Going to be dynamically inserted -->
+        <p>Wrong</p>
+        <span>e, r, t, y</span>
+      </div>
+    </div>
+
+    <div class="word" id="word">
+      <div class="letter">h</div>
+      <div class="letter">e</div>
+      <div class="letter">l</div>
+      <div class="letter">l</div>
+      <div class="letter">o</div>
+    </div>
+
   </div>
+
+  <!-- Container for final message -->
+  <!-- Pop up: you won or lost, play again -->
+  <div class="popup-container" id="popup-container">
+    <div class="popup">
+      <h2 id="final-message">You have won</h2>
+      <button id="play-button">Play Again</button>
+    </div>
+
+    <!-- Notification if we used a letter, will slide up if prompted -->
+    <div class="notification-container" id="notification-container">
+      <p>You have already selected this letter</p>
+    </div>
+  </div>
+
 
 </body>
 
