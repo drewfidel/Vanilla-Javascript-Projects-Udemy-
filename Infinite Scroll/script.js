@@ -70,6 +70,7 @@ function filterPosts(e) {
     } else {
       post.style.display = 'none';
     }
+    us
 
   })
 
